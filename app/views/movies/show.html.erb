@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Movie name:</strong>
+  <%= @movie.movie_name %>
+</p>
+
+<p>
+  <strong>Movie path:</strong>
+  <%= @movie.movie_path %>
+</p>
+
+<%= video_tag "/movie/#{@movie.id.to_s}"+File.extname(@movie.movie_path.to_s).downcase, controls: true, autoplay: false, loop: false, width: 450 %>
+<br>
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
